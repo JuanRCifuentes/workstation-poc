@@ -1,0 +1,17 @@
+<p>image-processing works!</p>
+<div class="flex items-center gap-3">
+    <div (click)="getFile()" class="bg-primary hover:bg-secondary text-white p-3 rounded-md cursor-pointer">Get File</div>
+    <div (click)="ping()" class="bg-primary hover:bg-secondary text-white p-3 rounded-md cursor-pointer">PING</div>
+    {{pong()}}
+</div>
+<div class="flex gap-5">
+    <div class="p-1 rounded-md border-black bg-gray-200 hover:bg-gray-500 cursor-pointer">Cargar</div>
+    <div class="flex gap-5">
+        <div class="p-1 rounded-md border-black bg-gray-200 hover:bg-gray-500 cursor-pointer">Edit 1</div>
+        <div class="p-1 rounded-md border-black bg-gray-200 hover:bg-gray-500 cursor-pointer">Edit 2</div>
+        <div class="p-1 rounded-md border-black bg-gray-200 hover:bg-gray-500 cursor-pointer">Edit 3</div>
+        <div class="p-1 rounded-md border-black bg-gray-200 hover:bg-gray-500 cursor-pointer">Edit 4</div>
+        <div class="p-1 rounded-md border-black bg-gray-200 hover:bg-gray-500 cursor-pointer">Edit 5</div>
+    </div>
+</div>
+<app-image-canvas />
