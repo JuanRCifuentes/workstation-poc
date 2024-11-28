@@ -12,10 +12,10 @@
                 </div>
             }
         </div>
-        <div class="flex-1 overflow-scroll">
-            @if(currentImage() != ""){
-                <img [src]="currentImage()" alt="CurrentImage"/>
-            }
+        <div class="flex-1 overflow-scroll bg-gray-200">
+   
+            <canvas id="canvas"  width="1200" height="1200"></canvas>
+          
         </div>
     </div>
     <app-image-canvas />
