@@ -14,7 +14,9 @@ function setupIpcHandlers() {
         event.reply("get-files-reply", { error: err.message });
       } else {
         convertTifToPng(dirPath, files);
-        event.reply("get-files-reply", { files });
+        const pngFiles = files.filter(file => path.extname(file).toLowerCase() === '.png');
+        const filePaths = pngFiles.map(file => path.join(dirPath, file));
+        event.reply("get-files-reply", { files: filePaths });
       }
     });
   });
