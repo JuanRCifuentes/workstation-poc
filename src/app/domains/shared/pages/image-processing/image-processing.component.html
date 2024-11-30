@@ -1,22 +1,40 @@
+
+<!--<div class="flex items-center gap-3 ">
+  <button (click)="deskewImage()" class="bg-primary hover:bg-secondary text-white p-3 rounded-md cursor-pointer">Deskew</button>-->
+  <!--<button (click)="undo()" class="bg-primary hover:bg-secondary text-white p-3 rounded-md cursor-pointer">Undo</button>-->
+
+<!--</div>
+
+<div>
+  <button (click)="addTextbox()" class="bg-primary hover:bg-secondary text-white p-3 rounded-md cursor-pointer">Add Textbox</button>
+  <button (click)="saveCanvas()" class="bg-primary hover:bg-secondary text-white p-3 rounded-md cursor-pointer">Save Image</button>
+</div>-->
+
+
+
 <div class="h-full flex flex-col overflow-hidden">
-    <div class="flex items-center gap-3">
-        <div (click)="getFile()" class="bg-primary hover:bg-secondary text-white p-3 rounded-md cursor-pointer">Get File</div>
-        <div (click)="ping()" class="bg-primary hover:bg-secondary text-white p-3 rounded-md cursor-pointer">PING</div>
-        {{pong()}}
+  <div class="flex items-center gap-3">
+    <div (click)="getFile()" class="bg-primary hover:bg-secondary text-white p-3 rounded-md cursor-pointer">Get File</div>
+    <div (click)="ping()" class="bg-primary hover:bg-secondary text-white p-3 rounded-md cursor-pointer">PING</div>
+    <button (click)="addTextbox()" class="bg-primary hover:bg-secondary text-white p-3 rounded-md cursor-pointer">Add Textbox</button>
+    <button (click)="saveCanvas()" class="bg-primary hover:bg-secondary text-white p-3 rounded-md cursor-pointer">Save Image</button>
+    <button (click)="deskewImage()" class="bg-primary hover:bg-secondary text-white p-3 rounded-md cursor-pointer">Deskew</button>
+
+    {{pong()}}
+  </div>
+  <div class="flex-1 flex overflow-hidden">
+    <div class="overflow-scroll w-min">
+      @for(imagePath of imagePaths(); track imagePath){
+      <div (click)="thumbnailClick(imagePath)" class="bg-gray-200 p-1 w-16">
+        <img [src]="imagePath" alt="Thumbnail" />
+      </div>
+      }
     </div>
-    <div class="flex-1 flex overflow-hidden">
-        <div class="overflow-scroll w-min">
-            @for(imagePath of imagePaths(); track imagePath){
-                <div (click)="thumbnailClick(imagePath)" class="bg-gray-200 p-1 w-16">
-                    <img [src]="imagePath" alt="Thumbnail" />
-                </div>
-            }
-        </div>
-        <div class="flex-1 overflow-scroll bg-gray-200">
-   
-            <canvas id="canvas"  width="1200" height="1200"></canvas>
-          
-        </div>
+    <div class=" bg-gray-200">
+
+      <canvas id="canvas" width="900" height="1200"></canvas>
+
     </div>
-    <app-image-canvas />
+  </div>
+  <app-image-canvas />
 </div>
